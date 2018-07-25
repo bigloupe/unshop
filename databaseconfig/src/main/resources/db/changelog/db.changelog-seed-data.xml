@@ -710,5 +710,48 @@
       <column name="USER_ID" type="NUMERIC"/>
       <column name="GROUP_ID" type="NUMERIC"/>
     </loadUpdateData>
+    <loadUpdateData
+      encoding="UTF-8"
+      file="/src/main/resources/db/seed/CONTENT.csv"
+      primaryKey="CONTENT_ID"
+      quotchar="&quot;"
+      schemaName="SALESMANAGER"
+      separator=","
+      tableName="CONTENT">
+      <column name="CONTENT_ID" type="NUMERIC"/>
+      <column name="DATE_CREATED" type="DATE"/>
+      <column name="DATE_MODIFIED" type="DATE"/>
+      <column name="UPDT_ID" type="STRING"/>
+      <column name="CODE" type="STRING"/>
+      <column name="CONTENT_POSITION" type="STRING"/>
+      <column name="CONTENT_TYPE" type="STRING"/>
+      <column name="LINK_TO_MENU" type="BOOLEAN"/>
+      <column name="PRODUCT_GROUP" type="STRING"/>
+      <column name="SORT_ORDER" type="NUMERIC"/>
+      <column name="VISIBLE" type="BOOLEAN"/>
+      <column name="MERCHANT_ID" type="NUMERIC"/>
+    </loadUpdateData>
+    <loadUpdateData
+      encoding="UTF-8"
+      file="/src/main/resources/db/seed/CONTENT_DESCRIPTION.csv"
+      primaryKey="DESCRIPTION_ID"
+      quotchar="&quot;"
+      schemaName="SALESMANAGER"
+      separator=","
+      tableName="CONTENT_DESCRIPTION">
+      <column name="DESCRIPTION_ID" type="NUMERIC"/>
+      <column name="DATE_CREATED" type="DATE"/>
+      <column name="DATE_MODIFIED" type="DATE"/>
+      <column name="UPDT_ID" type="STRING"/>
+      <column name="DESCRIPTION" type="STRING"/>
+      <column name="NAME" type="STRING"/>
+      <column name="TITLE" type="STRING"/>
+      <column name="META_DESCRIPTION" type="STRING"/>
+      <column name="META_KEYWORDS" type="STRING"/>
+      <column name="META_TITLE" type="STRING"/>
+      <column name="SEF_URL" type="STRING"/>
+      <column name="LANGUAGE_ID" type="NUMERIC"/>
+      <column name="CONTENT_ID" type="NUMERIC"/>
+    </loadUpdateData>
   </changeSet>
 </databaseChangeLog>
