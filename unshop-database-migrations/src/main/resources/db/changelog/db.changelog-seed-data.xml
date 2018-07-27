@@ -1,0 +1,757 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+  <changeSet author="binayak" id="initial-data">
+    <loadUpdateData
+      encoding="UTF-8"
+      file="/src/main/resources/db/seed/LANGUAGE.csv"
+      primaryKey="ZONE_ID"
+      quotchar="&quot;"
+      schemaName="SALESMANAGER"
+      separator=","
+      tableName="LANGUAGE">
+      <column name="LANGUAGE_ID" type="NUMERIC"/>
+      <column name="DATE_CREATED" type="DATE"/>
+      <column name="DATE_MODIFIED" type="DATE"/>
+      <column name="UPDT_ID" type="STRING"/>
+      <column name="CODE" type="STRING"/>
+      <column name="SORT_ORDER" type="NUMERIC"/>
+    </loadUpdateData>
+    <loadUpdateData
+      encoding="UTF-8"
+      file="/src/main/resources/db/seed/COUNTRY.csv"
+      primaryKey="COUNTRY_ID"
+      quotchar="&quot;"
+      schemaName="SALESMANAGER"
+      separator=","
+      tableName="COUNTRY">
+      <column name="COUNTRY_ID" type="NUMERIC"/>
+      <column name="COUNTRY_ISOCODE" type="STRING"/>
+      <column name="COUNTRY_SUPPORTED" type="BOOLEAN"/>
+      <column name="GEOZONE_ID" type="NUMERIC"/>
+    </loadUpdateData>
+    <loadUpdateData
+      encoding="UTF-8"
+      file="/src/main/resources/db/seed/COUNTRY_DESCRIPTION.csv"
+      primaryKey="DESCRIPTION_ID"
+      quotchar="&quot;"
+      schemaName="SALESMANAGER"
+      separator=","
+      tableName="COUNTRY_DESCRIPTION">
+      <column name="DESCRIPTION_ID" type="NUMERIC"/>
+      <column name="DATE_CREATED" type="DATE"/>
+      <column name="DATE_MODIFIED" type="DATE"/>
+      <column name="UPDT_ID" type="STRING"/>
+      <column name="DESCRIPTION" type="STRING"/>
+      <column name="NAME" type="STRING"/>
+      <column name="TITLE" type="STRING"/>
+      <column name="LANGUAGE_ID" type="NUMERIC"/>
+      <column name="COUNTRY_ID" type="NUMERIC"/>
+    </loadUpdateData>
+    <loadUpdateData
+      encoding="UTF-8"
+      file="/src/main/resources/db/seed/ZONE.csv"
+      primaryKey="ZONE_ID"
+      quotchar="&quot;"
+      schemaName="SALESMANAGER"
+      separator=","
+      tableName="ZONE">
+      <column name="ZONE_ID" type="NUMERIC"/>
+      <column name="ZONE_CODE" type="STRING"/>
+      <column name="COUNTRY_ID" type="NUMERIC"/>
+    </loadUpdateData>
+    <loadUpdateData
+      encoding="UTF-8"
+      file="/src/main/resources/db/seed/ZONE_DESCRIPTION.csv"
+      primaryKey="ZONE_ID"
+      quotchar="&quot;"
+      schemaName="SALESMANAGER"
+      separator=","
+      tableName="ZONE_DESCRIPTION">
+      <column name="DESCRIPTION_ID" type="NUMERIC"/>
+      <column name="DATE_CREATED" type="DATE"/>
+      <column name="DATE_MODIFIED" type="DATE"/>
+      <column name="UPDT_ID" type="STRING"/>
+      <column name="DESCRIPTION" type="STRING"/>
+      <column name="NAME" type="STRING"/>
+      <column name="TITLE" type="STRING"/>
+      <column name="LANGUAGE_ID" type="NUMERIC"/>
+      <column name="ZONE_ID" type="NUMERIC"/>
+    </loadUpdateData>
+    <loadUpdateData
+      encoding="UTF-8"
+      file="/src/main/resources/db/seed/CURRENCY.csv"
+      primaryKey="CURRENCY_ID"
+      quotchar="&quot;"
+      schemaName="SALESMANAGER"
+      separator=","
+      tableName="CURRENCY">
+      <column name="CURRENCY_ID" type="NUMERIC"/>
+      <column name="CURRENCY_CODE" type="STRING"/>
+      <column name="CURRENCY_CURRENCY_CODE" type="STRING"/>
+      <column name="CURRENCY_NAME" type="STRING"/>
+      <column name="CURRENCY_SUPPORTED" type="BOOLEAN"/>
+    </loadUpdateData>
+    <loadUpdateData
+      encoding="UTF-8"
+      file="/src/main/resources/db/seed/MERCHANT_STORE.csv"
+      primaryKey="MERCHANT_ID"
+      quotchar="&quot;"
+      schemaName="SALESMANAGER"
+      separator=","
+      tableName="MERCHANT_STORE">
+      <column name="MERCHANT_ID" type="NUMERIC"/>
+      <column name="STORE_CODE" type="STRING"/>
+      <column name="CONTINUESHOPPINGURL" type="STRING"/>
+      <column name="CURRENCY_FORMAT_NATIONAL" type="BOOLEAN"/>
+      <column name="DOMAIN_NAME" type="STRING"/>
+      <column name="IN_BUSINESS_SINCE" type="date"/>
+      <column name="INVOICE_TEMPLATE" type="STRING"/>
+      <column name="SEIZEUNITCODE" type="STRING"/>
+      <column name="STORE_EMAIL" type="STRING"/>
+      <column name="STORE_LOGO" type="STRING"/>
+      <column name="STORE_TEMPLATE" type="STRING"/>
+      <column name="STORE_ADDRESS" type="STRING"/>
+      <column name="STORE_CITY" type="STRING"/>
+      <column name="STORE_NAME" type="STRING"/>
+      <column name="STORE_PHONE" type="STRING"/>
+      <column name="STORE_POSTAL_CODE" type="STRING"/>
+      <column name="STORE_STATE_PROV" type="STRING"/>
+      <column name="USE_CACHE" type="BOOLEAN"/>
+      <column name="WEIGHTUNITCODE" type="STRING"/>
+      <column name="COUNTRY_ID" type="NUMERIC"/>
+      <column name="CURRENCY_ID" type="NUMERIC"/>
+      <column name="LANGUAGE_ID" type="NUMERIC"/>
+      <column name="ZONE_ID" type="NUMERIC"/>
+    </loadUpdateData>
+    <loadUpdateData
+      encoding="UTF-8"
+      file="/src/main/resources/db/seed/CATEGORY.csv"
+      primaryKey="CATEGORY_ID"
+      quotchar="&quot;"
+      schemaName="SALESMANAGER"
+      separator=","
+      tableName="CATEGORY">
+      <column name="CATEGORY_ID" type="NUMERIC"/>
+      <column name="DATE_CREATED" type="DATE"/>
+      <column name="DATE_MODIFIED" type="DATE"/>
+      <column name="UPDT_ID" type="STRING"/>
+      <column name="CATEGORY_IMAGE" type="STRING"/>
+      <column name="CATEGORY_STATUS" type="BOOLEAN"/>
+      <column name="CODE" type="STRING"/>
+      <column name="DEPTH" type="NUMERIC"/>
+      <column name="FEATURED" type="BOOLEAN"/>
+      <column name="LINEAGE" type="STRING"/>
+      <column name="SORT_ORDER" type="NUMERIC"/>
+      <column name="VISIBLE" type="BOOLEAN"/>
+      <column name="MERCHANT_ID" type="NUMERIC"/>
+      <column name="PARENT_ID" type="NUMERIC"/>
+    </loadUpdateData>
+    <loadUpdateData
+      encoding="UTF-8"
+      file="/src/main/resources/db/seed/CATEGORY_DESCRIPTION.csv"
+      primaryKey="DESCRIPTION_ID"
+      quotchar="&quot;"
+      schemaName="SALESMANAGER"
+      separator=","
+      tableName="CATEGORY_DESCRIPTION">
+      <column name="DESCRIPTION_ID" type="NUMERIC"/>
+      <column name="DATE_CREATED" type="DATE"/>
+      <column name="DATE_MODIFIED" type="DATE"/>
+      <column name="UPDT_ID" type="STRING"/>
+      <column name="DESCRIPTION" type="STRING"/>
+      <column name="NAME" type="STRING"/>
+      <column name="TITLE" type="STRING"/>
+      <column name="CATEGORY_HIGHLIGHT" type="STRING"/>
+      <column name="META_DESCRIPTION" type="STRING"/>
+      <column name="META_KEYWORDS" type="STRING"/>
+      <column name="META_TITLE" type="STRING"/>
+      <column name="SEF_URL" type="STRING"/>
+      <column name="LANGUAGE_ID" type="NUMERIC"/>
+      <column name="CATEGORY_ID" type="NUMERIC"/>
+    </loadUpdateData>
+    <loadUpdateData
+      encoding="UTF-8"
+      file="/src/main/resources/db/seed/CUSTOMER.csv"
+      primaryKey="CUSTOMER_ID"
+      quotchar="&quot;"
+      schemaName="SALESMANAGER"
+      separator=","
+      tableName="CUSTOMER">
+      <column name="CUSTOMER_ID" type="NUMERIC"/>
+      <column name="CUSTOMER_ANONYMOUS" type="BOOLEAN"/>
+      <column name="DATE_CREATED" type="DATE"/>
+      <column name="DATE_MODIFIED" type="DATE"/>
+      <column name="UPDT_ID" type="STRING"/>
+      <column name="BILLING_STREET_ADDRESS" type="STRING"/>
+      <column name="BILLING_CITY" type="STRING"/>
+      <column name="BILLING_COMPANY" type="STRING"/>
+      <column name="BILLING_FIRST_NAME" type="STRING"/>
+      <column name="BILLING_LAST_NAME" type="STRING"/>
+      <column name="LATITUDE" type="STRING"/>
+      <column name="LONGITUDE" type="STRING"/>
+      <column name="BILLING_POSTCODE" type="STRING"/>
+      <column name="BILLING_STATE" type="STRING"/>
+      <column name="BILLING_TELEPHONE" type="STRING"/>
+      <column name="CUSTOMER_COMPANY" type="STRING"/>
+      <column name="REVIEW_AVG" type="NUMERIC"/>
+      <column name="REVIEW_COUNT" type="NUMERIC"/>
+      <column name="CUSTOMER_DOB" type="DATE"/>
+      <column name="DELIVERY_STREET_ADDRESS" type="STRING"/>
+      <column name="DELIVERY_CITY" type="STRING"/>
+      <column name="DELIVERY_COMPANY" type="STRING"/>
+      <column name="DELIVERY_FIRST_NAME" type="STRING"/>
+      <column name="DELIVERY_LAST_NAME" type="STRING"/>
+      <column name="DELIVERY_POSTCODE" type="STRING"/>
+      <column name="DELIVERY_STATE" type="STRING"/>
+      <column name="DELIVERY_TELEPHONE" type="STRING"/>
+      <column name="CUSTOMER_EMAIL_ADDRESS" type="STRING"/>
+      <column name="CUSTOMER_GENDER" type="STRING"/>
+      <column name="CUSTOMER_NICK" type="STRING"/>
+      <column name="CUSTOMER_PASSWORD" type="STRING"/>
+      <column name="PROVIDER" type="STRING"/>
+      <column name="BILLING_COUNTRY_ID" type="NUMERIC"/>
+      <column name="BILLING_ZONE_ID" type="NUMERIC"/>
+      <column name="LANGUAGE_ID" type="NUMERIC"/>
+      <column name="DELIVERY_COUNTRY_ID" type="NUMERIC"/>
+      <column name="DELIVERY_ZONE_ID" type="NUMERIC"/>
+      <column name="MERCHANT_ID" type="NUMERIC"/>
+    </loadUpdateData>
+    <loadUpdateData
+      encoding="UTF-8"
+      file="/src/main/resources/db/seed/SM_GROUP.csv"
+      primaryKey="GROUP_ID"
+      quotchar="&quot;"
+      schemaName="SALESMANAGER"
+      separator=","
+      tableName="SM_GROUP">
+      <column name="GROUP_ID" type="NUMERIC"/>
+      <column name="DATE_CREATED" type="DATE"/>
+      <column name="DATE_MODIFIED" type="DATE"/>
+      <column name="UPDT_ID" type="STRING"/>
+      <column name="GROUP_NAME" type="STRING"/>
+      <column name="GROUP_TYPE" type="STRING"/>
+    </loadUpdateData>
+    <loadUpdateData
+      encoding="UTF-8"
+      file="/src/main/resources/db/seed/CUSTOMER_GROUP.csv"
+      primaryKey="CUSTOMER_ID"
+      quotchar="&quot;"
+      schemaName="SALESMANAGER"
+      separator=","
+      tableName="CUSTOMER_GROUP">
+      <column name="CUSTOMER_ID" type="NUMERIC"/>
+      <column name="GROUP_ID" type="NUMERIC"/>
+    </loadUpdateData>
+    <loadUpdateData
+      encoding="UTF-8"
+      file="/src/main/resources/db/seed/MANUFACTURER.csv"
+      primaryKey="MANUFACTURER_ID"
+      quotchar="&quot;"
+      schemaName="SALESMANAGER"
+      separator=","
+      tableName="MANUFACTURER">
+      <column name="MANUFACTURER_ID" type="NUMERIC"/>
+      <column name="DATE_CREATED" type="DATE"/>
+      <column name="DATE_MODIFIED" type="DATE"/>
+      <column name="UPDT_ID" type="STRING"/>
+      <column name="CODE" type="STRING"/>
+      <column name="MANUFACTURER_IMAGE" type="STRING"/>
+      <column name="SORT_ORDER" type="NUMERIC"/>
+      <column name="MERCHANT_ID" type="NUMERIC"/>
+    </loadUpdateData>
+    <loadUpdateData
+      encoding="UTF-8"
+      file="/src/main/resources/db/seed/MANUFACTURER_DESCRIPTION.csv"
+      primaryKey="DESCRIPTION_ID"
+      quotchar="&quot;"
+      schemaName="SALESMANAGER"
+      separator=","
+      tableName="MANUFACTURER_DESCRIPTION">
+      <column name="DESCRIPTION_ID" type="NUMERIC"/>
+      <column name="DATE_CREATED" type="DATE"/>
+      <column name="DATE_MODIFIED" type="DATE"/>
+      <column name="UPDT_ID" type="STRING"/>
+      <column name="DESCRIPTION" type="STRING"/>
+      <column name="NAME" type="STRING"/>
+      <column name="TITLE" type="STRING"/>
+      <column name="DATE_LAST_CLICK" type="DATE"/>
+      <column name="MANUFACTURERS_URL" type="STRING"/>
+      <column name="URL_CLICKED" type="NUMERIC"/>
+      <column name="LANGUAGE_ID" type="NUMERIC"/>
+      <column name="MANUFACTURER_ID" type="NUMERIC"/>
+    </loadUpdateData>
+    <loadUpdateData
+      encoding="UTF-8"
+      file="/src/main/resources/db/seed/MERCHANT_STORE.csv"
+      primaryKey="MERCHANT_ID"
+      quotchar="&quot;"
+      schemaName="SALESMANAGER"
+      separator=","
+      tableName="MERCHANT_STORE">
+      <column name="MERCHANT_ID" type="NUMERIC"/>
+      <column name="STORE_CODE" type="STRING"/>
+      <column name="CONTINUESHOPPINGURL" type="STRING"/>
+      <column name="CURRENCY_FORMAT_NATIONAL" type="BOOLEAN"/>
+      <column name="DOMAIN_NAME" type="STRING"/>
+      <column name="IN_BUSINESS_SINCE" type="DATE"/>
+      <column name="INVOICE_TEMPLATE" type="STRING"/>
+      <column name="SEIZEUNITCODE" type="STRING"/>
+      <column name="STORE_EMAIL" type="STRING"/>
+      <column name="STORE_LOGO" type="STRING"/>
+      <column name="STORE_TEMPLATE" type="STRING"/>
+      <column name="STORE_ADDRESS" type="STRING"/>
+      <column name="STORE_CITY" type="STRING"/>
+      <column name="STORE_NAME" type="STRING"/>
+      <column name="STORE_PHONE" type="STRING"/>
+      <column name="STORE_POSTAL_CODE" type="STRING"/>
+      <column name="STORE_STATE_PROV" type="STRING"/>
+      <column name="USE_CACHE" type="BOOLEAN"/>
+      <column name="WEIGHTUNITCODE" type="STRING"/>
+      <column name="COUNTRY_ID" type="NUMERIC"/>
+      <column name="CURRENCY_ID" type="NUMERIC"/>
+      <column name="LANGUAGE_ID" type="NUMERIC"/>
+      <column name="ZONE_ID" type="NUMERIC"/>
+    </loadUpdateData>
+    <loadUpdateData
+      encoding="UTF-8"
+      file="/src/main/resources/db/seed/MERCHANT_LANGUAGE.csv"
+      primaryKey="MANUFACTURER_ID"
+      quotchar="&quot;"
+      schemaName="SALESMANAGER"
+      separator=","
+      tableName="MERCHANT_LANGUAGE">
+      <column name="stores_MERCHANT_ID" type="NUMERIC"/>
+      <column name="languages_LANGUAGE_ID" type="NUMERIC"/>
+    </loadUpdateData>
+    <loadUpdateData
+      encoding="UTF-8"
+      file="/src/main/resources/db/seed/MERCHANT_CONFIGURATION.csv"
+      primaryKey="MERCHANT_CONFIG_ID"
+      quotchar="&quot;"
+      schemaName="SALESMANAGER"
+      separator=","
+      tableName="MERCHANT_CONFIGURATION">
+      <column name="MERCHANT_CONFIG_ID" type="NUMERIC"/>
+      <column name="DATE_CREATED" type="DATE"/>
+      <column name="DATE_MODIFIED" type="DATE"/>
+      <column name="UPDT_ID" type="STRING"/>
+      <column name="CONFIG_KEY" type="STRING"/>
+      <column name="TYPE" type="STRING"/>
+      <column name="VALUE" type="STRING"/>
+      <column name="MERCHANT_ID" type="NUMERIC"/>
+    </loadUpdateData>
+    <loadUpdateData
+      encoding="UTF-8"
+      file="/src/main/resources/db/seed/MODULE_CONFIGURATION.csv"
+      primaryKey="MODULE_CONF_ID"
+      quotchar="&quot;"
+      schemaName="SALESMANAGER"
+      separator=","
+      tableName="MODULE_CONFIGURATION">
+      <column name="MODULE_CONF_ID" type="NUMERIC"/>
+      <column name="DATE_CREATED" type="DATE"/>
+      <column name="DATE_MODIFIED" type="DATE"/>
+      <column name="UPDT_ID" type="STRING"/>
+      <column name="CODE" type="STRING"/>
+      <column name="DETAILS" type="STRING"/>
+      <column name="CONFIGURATION" type="STRING"/>
+      <column name="CUSTOM_IND" type="BOOLEAN"/>
+      <column name="IMAGE" type="STRING"/>
+      <column name="MODULE" type="STRING"/>
+      <column name="REGIONS" type="STRING"/>
+      <column name="TYPE" type="STRING"/>
+    </loadUpdateData>
+    <loadUpdateData
+      encoding="UTF-8"
+      file="/src/main/resources/db/seed/PERMISSION.csv"
+      primaryKey="PERMISSION_ID"
+      quotchar="&quot;"
+      schemaName="SALESMANAGER"
+      separator=","
+      tableName="PERMISSION">
+      <column name="PERMISSION_ID" type="NUMERIC"/>
+      <column name="DATE_CREATED" type="DATE"/>
+      <column name="DATE_MODIFIED" type="DATE"/>
+      <column name="UPDT_ID" type="STRING"/>
+      <column name="PERMISSION_NAME" type="STRING"/>
+    </loadUpdateData>
+    <loadUpdateData
+      encoding="UTF-8"
+      file="/src/main/resources/db/seed/PERMISSION_GROUP.csv"
+      primaryKey=""
+      quotchar="&quot;"
+      schemaName="SALESMANAGER"
+      separator=","
+      tableName="PERMISSION_GROUP">
+      <column name="PERMISSION_ID" type="NUMERIC"/>
+      <column name="GROUP_ID" type="NUMERIC"/>
+    </loadUpdateData>
+    <loadUpdateData
+      encoding="UTF-8"
+      file="/src/main/resources/db/seed/PRODUCT.csv"
+      primaryKey="PRODUCT_ID"
+      quotchar="&quot;"
+      schemaName="SALESMANAGER"
+      separator=","
+      tableName="PRODUCT">
+      <column name="PRODUCT_ID" type="NUMERIC"/>
+      <column name="DATE_CREATED" type="DATE"/>
+      <column name="DATE_MODIFIED" type="DATE"/>
+      <column name="UPDT_ID" type="STRING"/>
+      <column name="AVAILABLE" type="BOOLEAN"/>
+      <column name="COND" type="NUMERIC"/>
+      <column name="DATE_AVAILABLE" type="DATE"/>
+      <column name="PREORDER" type="BOOLEAN"/>
+      <column name="PRODUCT_HEIGHT" type="NUMERIC"/>
+      <column name="PRODUCT_FREE" type="BOOLEAN"/>
+      <column name="PRODUCT_LENGTH" type="NUMERIC"/>
+      <column name="QUANTITY_ORDERED" type="NUMERIC"/>
+      <column name="REVIEW_AVG" type="NUMERIC"/>
+      <column name="REVIEW_COUNT" type="NUMERIC"/>
+      <column name="PRODUCT_SHIP" type="BOOLEAN"/>
+      <column name="PRODUCT_VIRTUAL" type="BOOLEAN"/>
+      <column name="PRODUCT_WEIGHT" type="NUMERIC"/>
+      <column name="PRODUCT_WIDTH" type="NUMERIC"/>
+      <column name="REF_SKU" type="STRING"/>
+      <column name="RENTAL_DURATION" type="NUMERIC"/>
+      <column name="RENTAL_PERIOD" type="NUMERIC"/>
+      <column name="RENTAL_STATUS" type="NUMERIC"/>
+      <column name="SKU" type="STRING"/>
+      <column name="SORT_ORDER" type="NUMERIC"/>
+      <column name="MANUFACTURER_ID" type="NUMERIC"/>
+      <column name="MERCHANT_ID" type="NUMERIC"/>
+      <column name="CUSTOMER_ID" type="NUMERIC"/>
+      <column name="TAX_CLASS_ID" type="NUMERIC"/>
+      <column name="PRODUCT_TYPE_ID" type="NUMERIC"/>
+    </loadUpdateData>
+    <loadUpdateData
+      encoding="UTF-8"
+      file="/src/main/resources/db/seed/PRODUCT_AVAILABILITY.csv"
+      primaryKey="PRODUCT_AVAIL_ID"
+      quotchar="&quot;"
+      schemaName="SALESMANAGER"
+      separator=","
+      tableName="PRODUCT_AVAILABILITY">
+      <column name="PRODUCT_AVAIL_ID" type="NUMERIC"/>
+      <column name="DATE_AVAILABLE" type="DATE"/>
+      <column name="FREE_SHIPPING" type="BOOLEAN"/>
+      <column name="QUANTITY" type="NUMERIC"/>
+      <column name="QUANTITY_ORD_MAX" type="NUMERIC"/>
+      <column name="QUANTITY_ORD_MIN" type="NUMERIC"/>
+      <column name="STATUS" type="BOOLEAN"/>
+      <column name="REGION" type="STRING"/>
+      <column name="REGION_VARIANT" type="STRING"/>
+      <column name="PRODUCT_ID" type="NUMERIC"/>
+    </loadUpdateData>
+    <loadUpdateData
+      encoding="UTF-8"
+      file="/src/main/resources/db/seed/PRODUCT_CATEGORY.csv"
+      primaryKey=""
+      quotchar="&quot;"
+      schemaName="SALESMANAGER"
+      separator=","
+      tableName="PRODUCT_CATEGORY">
+      <column name="PRODUCT_ID" type="NUMERIC"/>
+      <column name="CATEGORY_ID" type="NUMERIC"/>
+    </loadUpdateData>
+    <loadUpdateData
+      encoding="UTF-8"
+      file="/src/main/resources/db/seed/PRODUCT_DESCRIPTION.csv"
+      primaryKey="DESCRIPTION_ID"
+      quotchar="&quot;"
+      schemaName="SALESMANAGER"
+      separator=","
+      tableName="PRODUCT_DESCRIPTION">
+      <column name="DESCRIPTION_ID" type="NUMERIC"/>
+      <column name="DATE_CREATED" type="DATE"/>
+      <column name="DATE_MODIFIED" type="DATE"/>
+      <column name="UPDT_ID" type="STRING"/>
+      <column name="DESCRIPTION" type="STRING"/>
+      <column name="NAME" type="STRING"/>
+      <column name="TITLE" type="STRING"/>
+      <column name="META_DESCRIPTION" type="STRING"/>
+      <column name="META_KEYWORDS" type="STRING"/>
+      <column name="META_TITLE" type="STRING"/>
+      <column name="DOWNLOAD_LNK" type="STRING"/>
+      <column name="PRODUCT_HIGHLIGHT" type="STRING"/>
+      <column name="SEF_URL" type="STRING"/>
+      <column name="LANGUAGE_ID" type="NUMERIC"/>
+      <column name="PRODUCT_ID" type="NUMERIC"/>
+    </loadUpdateData>
+    <loadUpdateData
+      encoding="UTF-8"
+      file="/src/main/resources/db/seed/PRODUCT_IMAGE.csv"
+      primaryKey="PRODUCT_IMAGE_ID"
+      quotchar="&quot;"
+      schemaName="SALESMANAGER"
+      separator=","
+      tableName="PRODUCT_IMAGE">
+      <column name="PRODUCT_IMAGE_ID" type="NUMERIC"/>
+      <column name="DEFAULT_IMAGE" type="BOOLEAN"/>
+      <column name="IMAGE_CROP" type="BOOLEAN"/>
+      <column name="IMAGE_TYPE" type="NUMERIC"/>
+      <column name="PRODUCT_IMAGE" type="STRING"/>
+      <column name="PRODUCT_IMAGE_URL" type="STRING"/>
+      <column name="PRODUCT_ID" type="NUMERIC"/>
+    </loadUpdateData>
+    <loadUpdateData
+      encoding="UTF-8"
+      file="/src/main/resources/db/seed/PRODUCT_PRICE.csv"
+      primaryKey="PRODUCT_PRICE_ID"
+      quotchar="&quot;"
+      schemaName="SALESMANAGER"
+      separator=","
+      tableName="PRODUCT_PRICE">
+      <column name="PRODUCT_PRICE_ID" type="NUMERIC"/>
+      <column name="PRODUCT_PRICE_CODE" type="STRING"/>
+      <column name="DEFAULT_PRICE" type="BOOLEAN"/>
+      <column name="PRODUCT_PRICE_AMOUNT" type="NUMERIC"/>
+      <column name="PRODUCT_PRICE_SPECIAL_AMOUNT" type="NUMERIC"/>
+      <column name="PRODUCT_PRICE_SPECIAL_END_DATE" type="DATE"/>
+      <column name="PRODUCT_PRICE_SPECIAL_ST_DATE" type="DATE"/>
+      <column name="PRODUCT_PRICE_TYPE" type="STRING"/>
+      <column name="PRODUCT_AVAIL_ID" type="NUMERIC"/>
+    </loadUpdateData>
+    <loadUpdateData
+      encoding="UTF-8"
+      file="/src/main/resources/db/seed/PRODUCT_PRICE_DESCRIPTION.csv"
+      primaryKey="DESCRIPTION_ID"
+      quotchar="&quot;"
+      schemaName="SALESMANAGER"
+      separator=","
+      tableName="PRODUCT_PRICE_DESCRIPTION">
+      <column name="DESCRIPTION_ID" type="NUMERIC"/>
+      <column name="DATE_CREATED" type="DATE"/>
+      <column name="DATE_MODIFIED" type="DATE"/>
+      <column name="UPDT_ID" type="STRING"/>
+      <column name="DESCRIPTION" type="STRING"/>
+      <column name="NAME" type="STRING"/>
+      <column name="TITLE" type="STRING"/>
+      <column name="LANGUAGE_ID" type="NUMERIC"/>
+      <column name="PRODUCT_PRICE_ID" type="NUMERIC"/>
+    </loadUpdateData>
+    <loadUpdateData
+      encoding="UTF-8"
+      file="/src/main/resources/db/seed/PRODUCT_RELATIONSHIP.csv"
+      primaryKey="PRODUCT_RELATIONSHIP_ID"
+      quotchar="&quot;"
+      schemaName="SALESMANAGER"
+      separator=","
+      tableName="PRODUCT_RELATIONSHIP">
+      <column name="PRODUCT_RELATIONSHIP_ID" type="NUMERIC"/>
+      <column name="ACTIVE" type="BOOLEAN"/>
+      <column name="CODE" type="STRING"/>
+      <column name="PRODUCT_ID" type="NUMERIC"/>
+      <column name="RELATED_PRODUCT_ID" type="NUMERIC"/>
+      <column name="MERCHANT_ID" type="NUMERIC"/>
+    </loadUpdateData>
+    <loadUpdateData
+      encoding="UTF-8"
+      file="/src/main/resources/db/seed/PRODUCT_TYPE.csv"
+      primaryKey="PRODUCT_TYPE_ID"
+      quotchar="&quot;"
+      schemaName="SALESMANAGER"
+      separator=","
+      tableName="PRODUCT_TYPE">
+      <column name="PRODUCT_TYPE_ID" type="NUMERIC"/>
+      <column name="PRD_TYPE_ADD_TO_CART" type="BOOLEAN"/>
+      <column name="DATE_CREATED" type="DATE"/>
+      <column name="DATE_MODIFIED" type="DATE"/>
+      <column name="UPDT_ID" type="STRING"/>
+      <column name="PRD_TYPE_CODE" type="STRING"/>
+    </loadUpdateData>
+    <loadUpdateData
+      encoding="UTF-8"
+      file="/src/main/resources/db/seed/SHIPPING_QUOTE.csv"
+      primaryKey="SHIPPING_QUOTE_ID"
+      quotchar="&quot;"
+      schemaName="SALESMANAGER"
+      separator=","
+      tableName="SHIPPING_QUOTE">
+      <column name="SHIPPING_QUOTE_ID" type="NUMERIC"/>
+      <column name="CART_ID" type="NUMERIC"/>
+      <column name="CUSTOMER_ID" type="NUMERIC"/>
+      <column name="DELIVERY_STREET_ADDRESS" type="STRING"/>
+      <column name="DELIVERY_CITY" type="STRING"/>
+      <column name="DELIVERY_COMPANY" type="STRING"/>
+      <column name="DELIVERY_FIRST_NAME" type="STRING"/>
+      <column name="DELIVERY_LAST_NAME" type="STRING"/>
+      <column name="DELIVERY_POSTCODE" type="STRING"/>
+      <column name="DELIVERY_STATE" type="STRING"/>
+      <column name="DELIVERY_TELEPHONE" type="STRING"/>
+      <column name="SHIPPING_NUMBER_DAYS" type="NUMERIC"/>
+      <column name="FREE_SHIPPING" type="BOOLEAN"/>
+      <column name="QUOTE_HANDLING" type="NUMERIC"/>
+      <column name="MODULE" type="STRING"/>
+      <column name="OPTION_CODE" type="STRING"/>
+      <column name="OPTION_DELIVERY_DATE" type="DATE"/>
+      <column name="OPTION_NAME" type="STRING"/>
+      <column name="OPTION_SHIPPING_DATE" type="DATE"/>
+      <column name="ORDER_ID" type="NUMERIC"/>
+      <column name="QUOTE_PRICE" type="NUMERIC"/>
+      <column name="QUOTE_DATE" type="DATE"/>
+      <column name="DELIVERY_COUNTRY_ID" type="NUMERIC"/>
+      <column name="DELIVERY_ZONE_ID" type="NUMERIC"/>
+    </loadUpdateData>
+    <loadUpdateData
+      encoding="UTF-8"
+      file="/src/main/resources/db/seed/SHOPPING_CART.csv"
+      primaryKey="SHP_CART_ID"
+      quotchar="&quot;"
+      schemaName="SALESMANAGER"
+      separator=","
+      tableName="SHOPPING_CART">
+      <column name="SHP_CART_ID" type="NUMERIC"/>
+      <column name="DATE_CREATED" type="DATE"/>
+      <column name="DATE_MODIFIED" type="DATE"/>
+      <column name="UPDT_ID" type="STRING"/>
+      <column name="CUSTOMER_ID" type="NUMERIC"/>
+      <column name="SHP_CART_CODE" type="STRING"/>
+      <column name="MERCHANT_ID" type="NUMERIC"/>
+    </loadUpdateData>
+    <loadUpdateData
+      encoding="UTF-8"
+      file="/src/main/resources/db/seed/SHOPPING_CART_ITEM.csv"
+      primaryKey="SHP_CART_ITEM_ID"
+      quotchar="&quot;"
+      schemaName="SALESMANAGER"
+      separator=","
+      tableName="SHOPPING_CART_ITEM">
+      <column name="SHP_CART_ITEM_ID" type="NUMERIC"/>
+      <column name="DATE_CREATED" type="DATE"/>
+      <column name="DATE_MODIFIED" type="DATE"/>
+      <column name="UPDT_ID" type="STRING"/>
+      <column name="PRODUCT_ID" type="NUMERIC"/>
+      <column name="QUANTITY" type="NUMERIC"/>
+      <column name="SHP_CART_ID" type="NUMERIC"/>
+    </loadUpdateData>
+    <loadUpdateData
+      encoding="UTF-8"
+      file="/src/main/resources/db/seed/TAX_CLASS.csv"
+      primaryKey="TAX_CLASS_ID"
+      quotchar="&quot;"
+      schemaName="SALESMANAGER"
+      separator=","
+      tableName="TAX_CLASS">
+      <column name="TAX_CLASS_ID" type="NUMERIC"/>
+      <column name="TAX_CLASS_CODE" type="STRING"/>
+      <column name="TAX_CLASS_TITLE" type="STRING"/>
+      <column name="MERCHANT_ID" type="NUMERIC"/>
+    </loadUpdateData>
+    <loadUpdateData
+      encoding="UTF-8"
+      file="/src/main/resources/db/seed/USER.csv"
+      primaryKey="TAX_CLASS_ID"
+      quotchar="&quot;"
+      schemaName="SALESMANAGER"
+      separator=","
+      tableName="USER">
+      <column name="USER_ID" type="NUMERIC"/>
+      <column name="ACTIVE" type="BOOLEAN"/>
+      <column name="ADMIN_EMAIL" type="STRING"/>
+      <column name="ADMIN_NAME" type="STRING"/>
+      <column name="ADMIN_PASSWORD" type="STRING"/>
+      <column name="ADMIN_A1" type="STRING"/>
+      <column name="ADMIN_A2" type="STRING"/>
+      <column name="ADMIN_A3" type="STRING"/>
+      <column name="DATE_CREATED" type="DATE"/>
+      <column name="DATE_MODIFIED" type="DATE"/>
+      <column name="UPDT_ID" type="STRING"/>
+      <column name="ADMIN_FIRST_NAME" type="STRING"/>
+      <column name="LAST_ACCESS" type="DATE"/>
+      <column name="ADMIN_LAST_NAME" type="STRING"/>
+      <column name="LOGIN_ACCESS" type="DATE"/>
+      <column name="ADMIN_Q1" type="STRING"/>
+      <column name="ADMIN_Q2" type="STRING"/>
+      <column name="ADMIN_Q3" type="STRING"/>
+      <column name="LANGUAGE_ID" type="NUMERIC"/>
+      <column name="MERCHANT_ID" type="NUMERIC"/>
+    </loadUpdateData>
+    <loadUpdateData
+      encoding="UTF-8"
+      file="/src/main/resources/db/seed/USER.csv"
+      primaryKey="USER_ID"
+      quotchar="&quot;"
+      schemaName="SALESMANAGER"
+      separator=","
+      tableName="USER">
+      <column name="USER_ID" type="NUMERIC"/>
+      <column name="ACTIVE" type="BOOLEAN"/>
+      <column name="ADMIN_EMAIL" type="STRING"/>
+      <column name="ADMIN_NAME" type="STRING"/>
+      <column name="ADMIN_PASSWORD" type="STRING"/>
+      <column name="ADMIN_A1" type="STRING"/>
+      <column name="ADMIN_A2" type="STRING"/>
+      <column name="ADMIN_A3" type="STRING"/>
+      <column name="DATE_CREATED" type="DATE"/>
+      <column name="DATE_MODIFIED" type="DATE"/>
+      <column name="UPDT_ID" type="STRING"/>
+      <column name="ADMIN_FIRST_NAME" type="STRING"/>
+      <column name="LAST_ACCESS" type="DATE"/>
+      <column name="ADMIN_LAST_NAME" type="STRING"/>
+      <column name="LOGIN_ACCESS" type="DATE"/>
+      <column name="ADMIN_Q1" type="STRING"/>
+      <column name="ADMIN_Q2" type="STRING"/>
+      <column name="ADMIN_Q3" type="STRING"/>
+      <column name="LANGUAGE_ID" type="NUMERIC"/>
+      <column name="MERCHANT_ID" type="NUMERIC"/>
+    </loadUpdateData>
+    <loadUpdateData
+      encoding="UTF-8"
+      file="/src/main/resources/db/seed/USER_GROUP.csv"
+      primaryKey=""
+      quotchar="&quot;"
+      schemaName="SALESMANAGER"
+      separator=","
+      tableName="USER_GROUP">
+      <column name="USER_ID" type="NUMERIC"/>
+      <column name="GROUP_ID" type="NUMERIC"/>
+    </loadUpdateData>
+    <loadUpdateData
+      encoding="UTF-8"
+      file="/src/main/resources/db/seed/CONTENT.csv"
+      primaryKey="CONTENT_ID"
+      quotchar="&quot;"
+      schemaName="SALESMANAGER"
+      separator=","
+      tableName="CONTENT">
+      <column name="CONTENT_ID" type="NUMERIC"/>
+      <column name="DATE_CREATED" type="DATE"/>
+      <column name="DATE_MODIFIED" type="DATE"/>
+      <column name="UPDT_ID" type="STRING"/>
+      <column name="CODE" type="STRING"/>
+      <column name="CONTENT_POSITION" type="STRING"/>
+      <column name="CONTENT_TYPE" type="STRING"/>
+      <column name="LINK_TO_MENU" type="BOOLEAN"/>
+      <column name="PRODUCT_GROUP" type="STRING"/>
+      <column name="SORT_ORDER" type="NUMERIC"/>
+      <column name="VISIBLE" type="BOOLEAN"/>
+      <column name="MERCHANT_ID" type="NUMERIC"/>
+    </loadUpdateData>
+    <loadUpdateData
+      encoding="UTF-8"
+      file="/src/main/resources/db/seed/CONTENT_DESCRIPTION.csv"
+      primaryKey="DESCRIPTION_ID"
+      quotchar="&quot;"
+      schemaName="SALESMANAGER"
+      separator=","
+      tableName="CONTENT_DESCRIPTION">
+      <column name="DESCRIPTION_ID" type="NUMERIC"/>
+      <column name="DATE_CREATED" type="DATE"/>
+      <column name="DATE_MODIFIED" type="DATE"/>
+      <column name="UPDT_ID" type="STRING"/>
+      <column name="DESCRIPTION" type="STRING"/>
+      <column name="NAME" type="STRING"/>
+      <column name="TITLE" type="STRING"/>
+      <column name="META_DESCRIPTION" type="STRING"/>
+      <column name="META_KEYWORDS" type="STRING"/>
+      <column name="META_TITLE" type="STRING"/>
+      <column name="SEF_URL" type="STRING"/>
+      <column name="LANGUAGE_ID" type="NUMERIC"/>
+      <column name="CONTENT_ID" type="NUMERIC"/>
+    </loadUpdateData>
+  </changeSet>
+</databaseChangeLog>

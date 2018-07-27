@@ -4,13 +4,12 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.shopizer</groupId>
-  <artifactId>shopizer</artifactId>
+  <groupId>com.swrdfish</groupId>
+  <artifactId>unshop</artifactId>
   <version>2.2.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
-  <name>shopizer</name>
-  <url>http://maven.apache.org</url>
+  <name>unshop</name>
 
   <parent>
     <groupId>org.springframework.boot</groupId>
@@ -20,7 +19,6 @@
 
   <properties>
     <java.version>1.8</java.version>
-    <shopizer.version>2.2.0-SNAPSHOT</shopizer.version>
     <shopizer.search.version>2.2.0.1</shopizer.search.version>
     <shopizer-canadapost.version>2.2.0</shopizer-canadapost.version>
     <shopizer-shipping-distance.version>2.2.0</shopizer-shipping-distance.version>
@@ -131,11 +129,11 @@
   </dependencies>
 
   <modules>
-    <module>sm-core-model</module>
-    <module>sm-core-modules</module>
-    <module>sm-core</module>
-    <module>sm-shop</module>
-    <module>databaseconfig</module>
+    <module>unshop-core-model</module>
+    <module>unshop-core-modules</module>
+    <module>unshop-core</module>
+    <module>unshop-shop</module>
+    <module>unshop-database-migrations</module>
   </modules>
 
   <repositories>

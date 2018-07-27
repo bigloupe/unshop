@@ -1,5 +1,0 @@
-"CATEGORY_ID","DATE_CREATED","DATE_MODIFIED","UPDT_ID","CATEGORY_IMAGE","CATEGORY_STATUS","CODE","DEPTH","FEATURED","LINEAGE","SORT_ORDER","VISIBLE","MERCHANT_ID","PARENT_ID"
-"1","2018-01-07 14:14:02","2018-01-07 14:14:02","NULL","NULL","false","handbags","0","false","/","0","true","1","NULL"
-"2","2018-01-07 14:14:43","2018-01-07 14:14:43","NULL","NULL","false","beachbags","0","false","/","2","true","1","NULL"
-"3","2018-01-07 14:22:06","2018-01-07 14:22:06","NULL","NULL","false","bags","0","false","/","3","true","1","NULL"
-"4","2018-01-07 14:22:47","2018-01-07 14:22:47","NULL","NULL","false","laptop","0","false","/","3","true","1","NULL"
